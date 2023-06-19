@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <script>
+        const safariV = Number(navigator.userAgent.substring(navigator.userAgent.indexOf('Safari') - 6, navigator.userAgent.indexOf('Safari')).replace(/[^0-9.]/g, ''));
+        if (!isNaN(safariV) && safariV < 16.4) {
+            const safariPolyfill = document.createElement('script');
+            safariPolyfill.setAttribute('src', 'https://unpkg.com/es-module-shims@1.7.3/dist/es-module-shims.js');
+            safariPolyfill.async = true;
+            safariPolyfill.type = "module"
+            document.head.appendChild(safariPolyfill);
+        };
+    </script>
+    <script type="importmap">
+      {
+        "imports": {
+          "htm": "https://unpkg.com/htm@3.1.1/dist/htm.module.js",
+          "preact": "https://unpkg.com/preact@10.15.1/dist/preact.module.js",
+          "preact/debug": "https://unpkg.com/preact@10.15.1/debug/dist/debug.module.js",
+          "preact/devtools": "https://unpkg.com/preact@10.15.1/devtools/dist/devtools.module.js",
+          "preact/hooks": "https://unpkg.com/preact@10.15.1/hooks/dist/hooks.module.js",
+          "preact-router": "https://unpkg.com/preact-router@4.1.1/dist/preact-router.module.js",
+          "preact-router/match": "https://unpkg.com/preact-router@4.1.1/match/index.module.js",
+          "components": "/src/components/index.js",
+          "html": "/html.js"
+        }
+      }
+    </script>
+    <script type="module" src="/main.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+</html>
